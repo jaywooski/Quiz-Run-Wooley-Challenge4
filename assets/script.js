@@ -51,7 +51,7 @@ var questionnaire = [
 /**************************************** Functions section ****************************************************/
 var startQuiz = function(index) {
     createQuestion(index);
-    if (//correct)
+    // if (//correct)
 
 };
 

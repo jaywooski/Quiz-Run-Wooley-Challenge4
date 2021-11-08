@@ -58,12 +58,26 @@ width: 50%;
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     align-content: center;
     width: 60%;
 }
 
-button {
+.askStyle {
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    background-image: linear-gradient(to bottom, var(--primary), rgb(0, 58, 22));
+}
+
+#answer-opt {
+    border: solid var(--primary) 2px;
+    border-radius: 20px;
+    margin: 10px 0px;
+    cursor: pointer;
+}
+
+/*button {
     display: flex;
     justify-content: center;
     border-radius: 3px;
@@ -73,4 +87,26 @@ button {
     font-weight: bolder;
     cursor: pointer;
     
+}*/
+
+.submit-btn {
+    display: flex;
+    justify-content: center;
+    border-radius: 3px;
+    padding: 10px 50px;
+    background-color: var(--primary);
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.exit-btn {
+    display: flex;
+    justify-content: center;
+    border-radius: 3px;
+    padding: 10px 50px;
+    background-color: red;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
 }

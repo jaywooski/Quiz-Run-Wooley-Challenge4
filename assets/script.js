@@ -2,16 +2,19 @@
 var questionEl = document.querySelector(".question");
 
 // create element to represent answers
-var answerOptionEl = document.querySelector("#answer-opt");
+// var answerOptionEl = document.querySelector("#answer-opt");
 
 //create element to represent buttons
 var continueButton = document.querySelector("#start");
 var exitButton = document.querySelector("#quit");
 
+// create element to represent options
+var optionEl = document.querySelector("#answer-opt");
+
+
 // sets timer to default timing
 var counter = 90;
 var askEl = document.querySelector(".question");
-var optionEl = document.querySelector("#answer-opt");
 
 // sets global variable for number position of question 
 var index = 0;
@@ -49,30 +52,45 @@ var questionnaire = [
 ]; // creates array of question objects
 
 /**************************************** Functions section ****************************************************/
-var startQuiz = function(index) {
+var startQuiz = function() {
+    index = 0;
     createQuestion(index);
-    // if (//correct)
+    // checkResult(index);
 
 };
 
 var createQuestion = function(index) {
     // make variables to take place of selected queries^^^
-    var question = "<div class=askStyle>" + questionnaire[index].question + "</div>";
+    var problem = "<div class=askStyle>" + questionnaire[index].question + "</div>";
     var option = "<div id=answer-opt>" + questionnaire[index].options[0] + "</div>" 
                 +"<div id=answer-opt>" + questionnaire[index].options[1] + "</div>"
                 +"<div id=answer-opt>" + questionnaire[index].options[2] + "</div>"
                 +"<div id=answer-opt>" + questionnaire[index].options[3] + "</div>";
-    askEl.innerHTML = question + option;
+    askEl.innerHTML = problem + option;
     // optionEl.innerHTML = option;
 }
 
-var displayCorrect = function() {
-    var display = ""
+var checkResult = function() { 
+    var correct = questionnaire[0].answer;
+    var selected = document.getElementById("#answer-opt");
+    for(i = 0; i < questionnaire[0].options[i].length; i++){
+        
+        if (selected.clicked == true){
+            
+            console.log("That was correct");
+            break;
+        }
+        else{
+            console.log("Incorrect");
+            break;
+        }
+    }
+    
 };
 
-var displayWrong = function() {
+// var displayWrong = function() {
 
-};
+// };
 
 var endQuiz = function() {
     var announcement = "<h1 class='disclaimer'>Thanks for taking the quiz! Have a great day!</h1>";
@@ -80,3 +98,6 @@ var endQuiz = function() {
 };
  continueButton.addEventListener("click", startQuiz);
  exitButton.addEventListener("click", endQuiz);
+
+
+ optionEl.addEventListener("click", checkResult);
